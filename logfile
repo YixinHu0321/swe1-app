@@ -1,200 +1,100 @@
-2019-09-30T21:32:51.519273+00:00 app[web.1]: [2019-09-30 21:32:51 +0000] [11] [INFO] Worker exiting (pid: 11)
-2019-09-30T21:32:51.624873+00:00 app[web.1]: [2019-09-30 21:32:51 +0000] [4] [INFO] Shutting down: Master
-2019-09-30T21:32:51.625013+00:00 app[web.1]: [2019-09-30 21:32:51 +0000] [4] [INFO] Reason: Worker failed to boot.
-2019-09-30T21:32:51.707923+00:00 heroku[web.1]: Process exited with status 3
-2019-09-30T22:26:22.000000+00:00 app[api]: Build started by user yh3244@nyu.edu
-2019-09-30T22:26:42.611766+00:00 app[api]: Running release v15 commands by user yh3244@nyu.edu
-2019-09-30T22:26:42.611766+00:00 app[api]: Deploy ca2785e1 by user yh3244@nyu.edu
-2019-09-30T22:26:42.952034+00:00 app[api]: Starting process with command `/bin/sh -c 'if curl $HEROKU_RELEASE_LOG_STREAM --silent --connect-timeout 10 --retry 3 --retry-delay 1 >/tmp/log-stream; then
-2019-09-30T22:26:42.952034+00:00 app[api]: chmod u+x /tmp/log-stream
-2019-09-30T22:26:42.952034+00:00 app[api]: /tmp/log-stream /bin/sh -c '"'"'python manage.py migrate --noinput'"'"'
-2019-09-30T22:26:42.952034+00:00 app[api]: else
-2019-09-30T22:26:42.952034+00:00 app[api]: python manage.py migrate --noinput
-2019-09-30T22:26:42.952034+00:00 app[api]: fi'` by user yh3244@nyu.edu
-2019-09-30T22:26:47.159816+00:00 heroku[release.2157]: Starting process with command `/bin/sh -c 'if curl https://heroku-release-output.s3.amazonaws.com/log-stream?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJ3LIQ2SWG7V76SVQ%2F20190930%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190930T222642Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=60d7eef2785ee6ede17917e645caf7fcd39f187e74b6ef07274c1d5dd77d42ed --silent --connect-timeout 10 --retry 3 --retry-delay 1 >/tmp/log-stream; then   chmod u+x /tmp/log-stream   /tmp/log-stream /bin/sh -c '"'"'python manage.py migrate --noinput'"'"' else   python manage.py migrate --noinput fi'`
-2019-09-30T22:26:47.899498+00:00 heroku[release.2157]: State changed from starting to up
-2019-09-30T22:26:50.607409+00:00 heroku[release.2157]: State changed from up to complete
-2019-09-30T22:26:50.293792+00:00 app[release.2157]: Operations to perform:
-2019-09-30T22:26:50.293825+00:00 app[release.2157]: Apply all migrations: admin, auth, contenttypes, polls, sessions
-2019-09-30T22:26:50.313179+00:00 app[release.2157]: Running migrations:
-2019-09-30T22:26:50.313183+00:00 app[release.2157]: No migrations to apply.
-2019-09-30T22:26:50.588684+00:00 heroku[release.2157]: Process exited with status 0
-2019-09-30T22:26:51.000000+00:00 app[api]: Build succeeded
-2019-09-30T22:26:52.679695+00:00 app[api]: Release v15 created by user yh3244@nyu.edu
-2019-09-30T22:26:55.269614+00:00 heroku[web.1]: State changed from crashed to starting
-2019-09-30T22:27:01.351739+00:00 heroku[web.1]: Starting process with command `gunicorn swe1.wsgi --log-file -`
-2019-09-30T22:27:04.353016+00:00 heroku[web.1]: State changed from starting to crashed
-2019-09-30T22:27:04.372746+00:00 heroku[web.1]: State changed from crashed to starting
-2019-09-30T22:27:04.329680+00:00 heroku[web.1]: Process exited with status 3
-2019-09-30T22:27:04.203876+00:00 app[web.1]: [2019-09-30 22:27:04 +0000] [4] [INFO] Starting gunicorn 19.9.0
-2019-09-30T22:27:04.204408+00:00 app[web.1]: [2019-09-30 22:27:04 +0000] [4] [INFO] Listening at: http://0.0.0.0:53710 (4)
-2019-09-30T22:27:04.204511+00:00 app[web.1]: [2019-09-30 22:27:04 +0000] [4] [INFO] Using worker: sync
-2019-09-30T22:27:04.208296+00:00 app[web.1]: [2019-09-30 22:27:04 +0000] [10] [INFO] Booting worker with pid: 10
-2019-09-30T22:27:04.215320+00:00 app[web.1]: [2019-09-30 22:27:04 +0000] [10] [ERROR] Exception in worker process
-2019-09-30T22:27:04.215339+00:00 app[web.1]: Traceback (most recent call last):
-2019-09-30T22:27:04.215346+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
-2019-09-30T22:27:04.215352+00:00 app[web.1]: worker.init_process()
-2019-09-30T22:27:04.215354+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
-2019-09-30T22:27:04.215356+00:00 app[web.1]: self.load_wsgi()
-2019-09-30T22:27:04.215358+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
-2019-09-30T22:27:04.215360+00:00 app[web.1]: self.wsgi = self.app.wsgi()
-2019-09-30T22:27:04.215366+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
-2019-09-30T22:27:04.215369+00:00 app[web.1]: self.callable = self.load()
-2019-09-30T22:27:04.215371+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
-2019-09-30T22:27:04.215373+00:00 app[web.1]: return self.load_wsgiapp()
-2019-09-30T22:27:04.215375+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
-2019-09-30T22:27:04.215377+00:00 app[web.1]: return util.import_app(self.app_uri)
-2019-09-30T22:27:04.215379+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
-2019-09-30T22:27:04.215381+00:00 app[web.1]: __import__(module)
-2019-09-30T22:27:04.215390+00:00 app[web.1]: ModuleNotFoundError: No module named 'swe1'
-2019-09-30T22:27:04.215528+00:00 app[web.1]: [2019-09-30 22:27:04 +0000] [10] [INFO] Worker exiting (pid: 10)
-2019-09-30T22:27:04.248211+00:00 app[web.1]: [2019-09-30 22:27:04 +0000] [4] [INFO] Shutting down: Master
-2019-09-30T22:27:04.248383+00:00 app[web.1]: [2019-09-30 22:27:04 +0000] [4] [INFO] Reason: Worker failed to boot.
-2019-09-30T22:27:08.114199+00:00 heroku[web.1]: Starting process with command `gunicorn swe1.wsgi --log-file -`
-2019-09-30T22:27:10.176390+00:00 heroku[web.1]: State changed from starting to crashed
-2019-09-30T22:27:10.156525+00:00 heroku[web.1]: Process exited with status 3
-2019-09-30T22:27:09.958359+00:00 app[web.1]: [2019-09-30 22:27:09 +0000] [4] [INFO] Starting gunicorn 19.9.0
-2019-09-30T22:27:09.958906+00:00 app[web.1]: [2019-09-30 22:27:09 +0000] [4] [INFO] Listening at: http://0.0.0.0:47271 (4)
-2019-09-30T22:27:09.959010+00:00 app[web.1]: [2019-09-30 22:27:09 +0000] [4] [INFO] Using worker: sync
-2019-09-30T22:27:09.962785+00:00 app[web.1]: [2019-09-30 22:27:09 +0000] [10] [INFO] Booting worker with pid: 10
-2019-09-30T22:27:09.968231+00:00 app[web.1]: [2019-09-30 22:27:09 +0000] [10] [ERROR] Exception in worker process
-2019-09-30T22:27:09.968234+00:00 app[web.1]: Traceback (most recent call last):
-2019-09-30T22:27:09.968236+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
-2019-09-30T22:27:09.968237+00:00 app[web.1]: worker.init_process()
-2019-09-30T22:27:09.968239+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
-2019-09-30T22:27:09.968240+00:00 app[web.1]: self.load_wsgi()
-2019-09-30T22:27:09.968242+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
-2019-09-30T22:27:09.968243+00:00 app[web.1]: self.wsgi = self.app.wsgi()
-2019-09-30T22:27:09.968245+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
-2019-09-30T22:27:09.968246+00:00 app[web.1]: self.callable = self.load()
-2019-09-30T22:27:09.968248+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
-2019-09-30T22:27:09.968249+00:00 app[web.1]: return self.load_wsgiapp()
-2019-09-30T22:27:09.968251+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
-2019-09-30T22:27:09.968252+00:00 app[web.1]: return util.import_app(self.app_uri)
-2019-09-30T22:27:09.968254+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
-2019-09-30T22:27:09.968255+00:00 app[web.1]: __import__(module)
-2019-09-30T22:27:09.968260+00:00 app[web.1]: ModuleNotFoundError: No module named 'swe1'
-2019-09-30T22:27:09.968361+00:00 app[web.1]: [2019-09-30 22:27:09 +0000] [10] [INFO] Worker exiting (pid: 10)
-2019-09-30T22:27:09.969421+00:00 app[web.1]: [2019-09-30 22:27:09 +0000] [11] [INFO] Booting worker with pid: 11
-2019-09-30T22:27:09.974231+00:00 app[web.1]: [2019-09-30 22:27:09 +0000] [11] [ERROR] Exception in worker process
-2019-09-30T22:27:09.974233+00:00 app[web.1]: Traceback (most recent call last):
-2019-09-30T22:27:09.974235+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
-2019-09-30T22:27:09.974237+00:00 app[web.1]: worker.init_process()
-2019-09-30T22:27:09.974238+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
-2019-09-30T22:27:09.974240+00:00 app[web.1]: self.load_wsgi()
-2019-09-30T22:27:09.974241+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
-2019-09-30T22:27:09.974243+00:00 app[web.1]: self.wsgi = self.app.wsgi()
-2019-09-30T22:27:09.974244+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
-2019-09-30T22:27:09.974246+00:00 app[web.1]: self.callable = self.load()
-2019-09-30T22:27:09.974247+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
-2019-09-30T22:27:09.974249+00:00 app[web.1]: return self.load_wsgiapp()
-2019-09-30T22:27:09.974250+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
-2019-09-30T22:27:09.974252+00:00 app[web.1]: return util.import_app(self.app_uri)
-2019-09-30T22:27:09.974253+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
-2019-09-30T22:27:09.974255+00:00 app[web.1]: __import__(module)
-2019-09-30T22:27:09.974260+00:00 app[web.1]: ModuleNotFoundError: No module named 'swe1'
-2019-09-30T22:27:09.974362+00:00 app[web.1]: [2019-09-30 22:27:09 +0000] [11] [INFO] Worker exiting (pid: 11)
-2019-09-30T22:27:10.095373+00:00 app[web.1]: [2019-09-30 22:27:10 +0000] [4] [INFO] Shutting down: Master
-2019-09-30T22:27:10.095466+00:00 app[web.1]: [2019-09-30 22:27:10 +0000] [4] [INFO] Reason: Worker failed to boot.
-2019-09-30T22:27:15.360354+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=swe1-yixinhu.herokuapp.com request_id=43613f16-5b2c-4c17-9ec4-ed1cbe7318a2 fwd="207.237.64.61" dyno= connect= service= status=503 bytes= protocol=https
-2019-09-30T22:27:18.484487+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/polls/" host=swe1-yixinhu.herokuapp.com request_id=b54a7f16-d671-47e4-ab21-f34458758c1f fwd="207.237.64.61" dyno= connect= service= status=503 bytes= protocol=https
-2019-09-30T23:04:36.203417+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
-2019-09-30T23:04:36.203419+00:00 app[web.1]: worker.init_process()
-2019-09-30T23:04:36.203420+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
-2019-09-30T23:04:36.203422+00:00 app[web.1]: self.load_wsgi()
-2019-09-30T23:04:36.203423+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
-2019-09-30T23:04:36.203425+00:00 app[web.1]: self.wsgi = self.app.wsgi()
-2019-09-30T23:04:36.203426+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
-2019-09-30T23:04:36.203428+00:00 app[web.1]: self.callable = self.load()
-2019-09-30T23:04:36.203429+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
-2019-09-30T23:04:36.203431+00:00 app[web.1]: return self.load_wsgiapp()
-2019-09-30T23:04:36.203432+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
-2019-09-30T23:04:36.203433+00:00 app[web.1]: return util.import_app(self.app_uri)
-2019-09-30T23:04:36.203435+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
-2019-09-30T23:04:36.203436+00:00 app[web.1]: __import__(module)
-2019-09-30T23:04:36.203441+00:00 app[web.1]: ModuleNotFoundError: No module named 'swe1-yixinhu'
-2019-09-30T23:04:36.203545+00:00 app[web.1]: [2019-09-30 23:04:36 +0000] [10] [INFO] Worker exiting (pid: 10)
-2019-09-30T23:04:36.231066+00:00 app[web.1]: [2019-09-30 23:04:36 +0000] [4] [INFO] Shutting down: Master
-2019-09-30T23:04:36.231150+00:00 app[web.1]: [2019-09-30 23:04:36 +0000] [4] [INFO] Reason: Worker failed to boot.
-2019-09-30T23:04:41.237467+00:00 heroku[web.1]: Starting process with command `gunicorn swe1-yixinhu.wsgi --log-file -`
-2019-09-30T23:04:44.268683+00:00 heroku[web.1]: State changed from starting to crashed
-2019-09-30T23:04:44.246813+00:00 heroku[web.1]: Process exited with status 1
-2019-09-30T23:04:44.004273+00:00 app[web.1]: [2019-09-30 23:04:44 +0000] [4] [INFO] Starting gunicorn 19.9.0
-2019-09-30T23:04:44.005073+00:00 app[web.1]: [2019-09-30 23:04:44 +0000] [4] [INFO] Listening at: http://0.0.0.0:13845 (4)
-2019-09-30T23:04:44.005259+00:00 app[web.1]: [2019-09-30 23:04:44 +0000] [4] [INFO] Using worker: sync
-2019-09-30T23:04:44.010360+00:00 app[web.1]: [2019-09-30 23:04:44 +0000] [10] [INFO] Booting worker with pid: 10
-2019-09-30T23:04:44.020683+00:00 app[web.1]: [2019-09-30 23:04:44 +0000] [10] [ERROR] Exception in worker process
-2019-09-30T23:04:44.020687+00:00 app[web.1]: Traceback (most recent call last):
-2019-09-30T23:04:44.020690+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
-2019-09-30T23:04:44.020692+00:00 app[web.1]: worker.init_process()
-2019-09-30T23:04:44.020694+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
-2019-09-30T23:04:44.020696+00:00 app[web.1]: self.load_wsgi()
-2019-09-30T23:04:44.020702+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
-2019-09-30T23:04:44.020704+00:00 app[web.1]: self.wsgi = self.app.wsgi()
-2019-09-30T23:04:44.020707+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
-2019-09-30T23:04:44.020709+00:00 app[web.1]: self.callable = self.load()
-2019-09-30T23:04:44.020712+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
-2019-09-30T23:04:44.020714+00:00 app[web.1]: return self.load_wsgiapp()
-2019-09-30T23:04:44.020717+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
-2019-09-30T23:04:44.020719+00:00 app[web.1]: return util.import_app(self.app_uri)
-2019-09-30T23:04:44.020722+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
-2019-09-30T23:04:44.020724+00:00 app[web.1]: __import__(module)
-2019-09-30T23:04:44.020765+00:00 app[web.1]: ModuleNotFoundError: No module named 'swe1-yixinhu'
-2019-09-30T23:04:44.020974+00:00 app[web.1]: [2019-09-30 23:04:44 +0000] [10] [INFO] Worker exiting (pid: 10)
-2019-09-30T23:04:44.067889+00:00 app[web.1]: [2019-09-30 23:04:44 +0000] [11] [INFO] Booting worker with pid: 11
-2019-09-30T23:04:44.082358+00:00 app[web.1]: [2019-09-30 23:04:44 +0000] [11] [ERROR] Exception in worker process
-2019-09-30T23:04:44.082363+00:00 app[web.1]: Traceback (most recent call last):
-2019-09-30T23:04:44.082366+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
-2019-09-30T23:04:44.082368+00:00 app[web.1]: worker.init_process()
-2019-09-30T23:04:44.082370+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
-2019-09-30T23:04:44.082372+00:00 app[web.1]: self.load_wsgi()
-2019-09-30T23:04:44.082375+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
-2019-09-30T23:04:44.082377+00:00 app[web.1]: self.wsgi = self.app.wsgi()
-2019-09-30T23:04:44.082380+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
-2019-09-30T23:04:44.082381+00:00 app[web.1]: self.callable = self.load()
-2019-09-30T23:04:44.082383+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
-2019-09-30T23:04:44.082386+00:00 app[web.1]: return self.load_wsgiapp()
-2019-09-30T23:04:44.082388+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
-2019-09-30T23:04:44.082390+00:00 app[web.1]: return util.import_app(self.app_uri)
-2019-09-30T23:04:44.082392+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
-2019-09-30T23:04:44.082394+00:00 app[web.1]: __import__(module)
-2019-09-30T23:04:44.084942+00:00 app[web.1]: ModuleNotFoundError: No module named 'swe1-yixinhu'
-2019-09-30T23:04:44.086010+00:00 app[web.1]: [2019-09-30 23:04:44 +0000] [11] [INFO] Worker exiting (pid: 11)
-2019-09-30T23:04:44.134930+00:00 app[web.1]: Traceback (most recent call last):
-2019-09-30T23:04:44.135002+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 203, in run
-2019-09-30T23:04:44.135608+00:00 app[web.1]: self.manage_workers()
-2019-09-30T23:04:44.136042+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 545, in manage_workers
-2019-09-30T23:04:44.137383+00:00 app[web.1]: self.spawn_workers()
-2019-09-30T23:04:44.137630+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 617, in spawn_workers
-2019-09-30T23:04:44.138794+00:00 app[web.1]: time.sleep(0.1 * random.random())
-2019-09-30T23:04:44.139024+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
-2019-09-30T23:04:44.139922+00:00 app[web.1]: self.reap_workers()
-2019-09-30T23:04:44.139963+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
-2019-09-30T23:04:44.141070+00:00 app[web.1]: raise HaltServer(reason, self.WORKER_BOOT_ERROR)
-2019-09-30T23:04:44.141341+00:00 app[web.1]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
-2019-09-30T23:04:44.141471+00:00 app[web.1]: 
-2019-09-30T23:04:44.141475+00:00 app[web.1]: During handling of the above exception, another exception occurred:
-2019-09-30T23:04:44.141477+00:00 app[web.1]: 
-2019-09-30T23:04:44.141512+00:00 app[web.1]: Traceback (most recent call last):
-2019-09-30T23:04:44.141549+00:00 app[web.1]: File "/app/.heroku/python/bin/gunicorn", line 11, in <module>
-2019-09-30T23:04:44.142129+00:00 app[web.1]: sys.exit(run())
-2019-09-30T23:04:44.142169+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 61, in run
-2019-09-30T23:04:44.142891+00:00 app[web.1]: WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
-2019-09-30T23:04:44.142929+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/base.py", line 223, in run
-2019-09-30T23:04:44.143663+00:00 app[web.1]: super(Application, self).run()
-2019-09-30T23:04:44.143925+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
-2019-09-30T23:04:44.144477+00:00 app[web.1]: Arbiter(self).run()
-2019-09-30T23:04:44.144518+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 232, in run
-2019-09-30T23:04:44.145609+00:00 app[web.1]: self.halt(reason=inst.reason, exit_status=inst.exit_status)
-2019-09-30T23:04:44.145651+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 345, in halt
-2019-09-30T23:04:44.146020+00:00 app[web.1]: self.stop()
-2019-09-30T23:04:44.147033+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 393, in stop
-2019-09-30T23:04:44.147456+00:00 app[web.1]: time.sleep(0.1)
-2019-09-30T23:04:44.147495+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
-2019-09-30T23:04:44.147796+00:00 app[web.1]: self.reap_workers()
-2019-09-30T23:04:44.147801+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
-2019-09-30T23:04:44.148239+00:00 app[web.1]: raise HaltServer(reason, self.WORKER_BOOT_ERROR)
-2019-09-30T23:04:44.148246+00:00 app[web.1]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
-2019-09-30T23:04:45.599353+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/polls/" host=swe1-yixinhu.herokuapp.com request_id=be6172ec-b9d6-4361-b932-39e88674dbbc fwd="207.237.64.61" dyno= connect= service= status=503 bytes= protocol=https
-2019-09-30T23:04:45.628329+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/pols" host=swe1-yixinhu.herokuapp.com request_id=e108f504-10f8-42e1-808e-596e0cb17712 fwd="207.237.64.61" dyno= connect= service= status=503 bytes= protocol=https
-2019-09-30T23:04:46.056459+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/polls/" host=swe1-yixinhu.herokuapp.com request_id=0b7c4a3f-a929-49b6-ac9f-4cc8b54bd39e fwd="207.237.64.61" dyno= connect= service= status=503 bytes= protocol=https
+2019-09-30T23:09:51.727580+00:00 app[web.1]: Traceback (most recent call last):
+2019-09-30T23:09:51.727583+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+2019-09-30T23:09:51.727585+00:00 app[web.1]: worker.init_process()
+2019-09-30T23:09:51.727609+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+2019-09-30T23:09:51.727611+00:00 app[web.1]: self.load_wsgi()
+2019-09-30T23:09:51.727613+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+2019-09-30T23:09:51.727615+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2019-09-30T23:09:51.727617+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2019-09-30T23:09:51.727619+00:00 app[web.1]: self.callable = self.load()
+2019-09-30T23:09:51.727621+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+2019-09-30T23:09:51.727623+00:00 app[web.1]: return self.load_wsgiapp()
+2019-09-30T23:09:51.727625+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+2019-09-30T23:09:51.727628+00:00 app[web.1]: return util.import_app(self.app_uri)
+2019-09-30T23:09:51.727630+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+2019-09-30T23:09:51.727632+00:00 app[web.1]: __import__(module)
+2019-09-30T23:09:51.727641+00:00 app[web.1]: ModuleNotFoundError: No module named 'swe1-yixinhu'
+2019-09-30T23:09:51.727752+00:00 app[web.1]: [2019-09-30 23:09:51 +0000] [10] [INFO] Worker exiting (pid: 10)
+2019-09-30T23:09:51.758648+00:00 app[web.1]: [2019-09-30 23:09:51 +0000] [4] [INFO] Shutting down: Master
+2019-09-30T23:09:51.758786+00:00 app[web.1]: [2019-09-30 23:09:51 +0000] [4] [INFO] Reason: Worker failed to boot.
+2019-09-30T23:09:55.766874+00:00 heroku[web.1]: Starting process with command `gunicorn swe1-yixinhu.wsgi --log-file -`
+2019-09-30T23:09:58.687074+00:00 heroku[web.1]: State changed from starting to crashed
+2019-09-30T23:09:58.668924+00:00 heroku[web.1]: Process exited with status 1
+2019-09-30T23:09:58.511810+00:00 app[web.1]: [2019-09-30 23:09:58 +0000] [4] [INFO] Starting gunicorn 19.9.0
+2019-09-30T23:09:58.512444+00:00 app[web.1]: [2019-09-30 23:09:58 +0000] [4] [INFO] Listening at: http://0.0.0.0:47032 (4)
+2019-09-30T23:09:58.512586+00:00 app[web.1]: [2019-09-30 23:09:58 +0000] [4] [INFO] Using worker: sync
+2019-09-30T23:09:58.517196+00:00 app[web.1]: [2019-09-30 23:09:58 +0000] [10] [INFO] Booting worker with pid: 10
+2019-09-30T23:09:58.524527+00:00 app[web.1]: [2019-09-30 23:09:58 +0000] [10] [ERROR] Exception in worker process
+2019-09-30T23:09:58.524531+00:00 app[web.1]: Traceback (most recent call last):
+2019-09-30T23:09:58.524533+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+2019-09-30T23:09:58.524535+00:00 app[web.1]: worker.init_process()
+2019-09-30T23:09:58.524537+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+2019-09-30T23:09:58.524539+00:00 app[web.1]: self.load_wsgi()
+2019-09-30T23:09:58.524541+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+2019-09-30T23:09:58.524543+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2019-09-30T23:09:58.524545+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2019-09-30T23:09:58.524546+00:00 app[web.1]: self.callable = self.load()
+2019-09-30T23:09:58.524549+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+2019-09-30T23:09:58.524551+00:00 app[web.1]: return self.load_wsgiapp()
+2019-09-30T23:09:58.524552+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+2019-09-30T23:09:58.524554+00:00 app[web.1]: return util.import_app(self.app_uri)
+2019-09-30T23:09:58.524556+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+2019-09-30T23:09:58.524558+00:00 app[web.1]: __import__(module)
+2019-09-30T23:09:58.524565+00:00 app[web.1]: ModuleNotFoundError: No module named 'swe1-yixinhu'
+2019-09-30T23:09:58.524695+00:00 app[web.1]: [2019-09-30 23:09:58 +0000] [10] [INFO] Worker exiting (pid: 10)
+2019-09-30T23:09:58.556085+00:00 app[web.1]: [2019-09-30 23:09:58 +0000] [11] [INFO] Booting worker with pid: 11
+2019-09-30T23:09:58.561361+00:00 app[web.1]: [2019-09-30 23:09:58 +0000] [11] [ERROR] Exception in worker process
+2019-09-30T23:09:58.561365+00:00 app[web.1]: Traceback (most recent call last):
+2019-09-30T23:09:58.561368+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+2019-09-30T23:09:58.561370+00:00 app[web.1]: worker.init_process()
+2019-09-30T23:09:58.561372+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+2019-09-30T23:09:58.561374+00:00 app[web.1]: self.load_wsgi()
+2019-09-30T23:09:58.561376+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+2019-09-30T23:09:58.561378+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2019-09-30T23:09:58.561381+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2019-09-30T23:09:58.561382+00:00 app[web.1]: self.callable = self.load()
+2019-09-30T23:09:58.561385+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+2019-09-30T23:09:58.561387+00:00 app[web.1]: return self.load_wsgiapp()
+2019-09-30T23:09:58.561389+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+2019-09-30T23:09:58.561391+00:00 app[web.1]: return util.import_app(self.app_uri)
+2019-09-30T23:09:58.561393+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+2019-09-30T23:09:58.561395+00:00 app[web.1]: __import__(module)
+2019-09-30T23:09:58.561402+00:00 app[web.1]: ModuleNotFoundError: No module named 'swe1-yixinhu'
+2019-09-30T23:09:58.561534+00:00 app[web.1]: [2019-09-30 23:09:58 +0000] [11] [INFO] Worker exiting (pid: 11)
+2019-09-30T23:09:58.596229+00:00 app[web.1]: Traceback (most recent call last):
+2019-09-30T23:09:58.596233+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 203, in run
+2019-09-30T23:09:58.596553+00:00 app[web.1]: self.manage_workers()
+2019-09-30T23:09:58.596557+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 545, in manage_workers
+2019-09-30T23:09:58.596858+00:00 app[web.1]: self.spawn_workers()
+2019-09-30T23:09:58.596861+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 617, in spawn_workers
+2019-09-30T23:09:58.597149+00:00 app[web.1]: time.sleep(0.1 * random.random())
+2019-09-30T23:09:58.597152+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+2019-09-30T23:09:58.597312+00:00 app[web.1]: self.reap_workers()
+2019-09-30T23:09:58.597319+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+2019-09-30T23:09:58.597726+00:00 app[web.1]: raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+2019-09-30T23:09:58.597760+00:00 app[web.1]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+2019-09-30T23:09:58.597763+00:00 app[web.1]: 
+2019-09-30T23:09:58.597765+00:00 app[web.1]: During handling of the above exception, another exception occurred:
+2019-09-30T23:09:58.597767+00:00 app[web.1]: 
+2019-09-30T23:09:58.597771+00:00 app[web.1]: Traceback (most recent call last):
+2019-09-30T23:09:58.597773+00:00 app[web.1]: File "/app/.heroku/python/bin/gunicorn", line 11, in <module>
+2019-09-30T23:09:58.597901+00:00 app[web.1]: sys.exit(run())
+2019-09-30T23:09:58.597931+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 61, in run
+2019-09-30T23:09:58.598088+00:00 app[web.1]: WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+2019-09-30T23:09:58.598091+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/base.py", line 223, in run
+2019-09-30T23:09:58.598295+00:00 app[web.1]: super(Application, self).run()
+2019-09-30T23:09:58.598298+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/app/base.py", line 72, in run
+2019-09-30T23:09:58.598417+00:00 app[web.1]: Arbiter(self).run()
+2019-09-30T23:09:58.598420+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 232, in run
+2019-09-30T23:09:58.598580+00:00 app[web.1]: self.halt(reason=inst.reason, exit_status=inst.exit_status)
+2019-09-30T23:09:58.598585+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 345, in halt
+2019-09-30T23:09:58.598786+00:00 app[web.1]: self.stop()
+2019-09-30T23:09:58.598789+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 393, in stop
+2019-09-30T23:09:58.599015+00:00 app[web.1]: time.sleep(0.1)
+2019-09-30T23:09:58.599017+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 245, in handle_chld
+2019-09-30T23:09:58.599190+00:00 app[web.1]: self.reap_workers()
+2019-09-30T23:09:58.599193+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.6/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+2019-09-30T23:09:58.599436+00:00 app[web.1]: raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+2019-09-30T23:09:58.599441+00:00 app[web.1]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+2019-09-30T23:13:37.269027+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/polls/" host=swe1-yixinhu.herokuapp.com request_id=e82cac7f-4e70-41c0-b223-0e37e6ad469e fwd="207.237.64.61" dyno= connect= service= status=503 bytes= protocol=https
+2019-09-30T23:13:37.488307+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/polls/" host=swe1-yixinhu.herokuapp.com request_id=c0741231-b0e3-49c0-9651-ed6648cbb317 fwd="207.237.64.61" dyno= connect= service= status=503 bytes= protocol=https
