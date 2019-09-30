@@ -1,1 +1,2 @@
-web: gunicorn swe1-yixinhu.wsgi
+release: python manage.py migrate --noinput
+web: gunicorn swe1-yixinhu.wsgi --log-file -
