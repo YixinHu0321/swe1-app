@@ -6,6 +6,7 @@ from django.urls import reverse
 
 from .models import Question
 
+
 def create_question(question_text, days):
     """
     Create a question with the given `question_text` and published the
@@ -14,6 +15,7 @@ def create_question(question_text, days):
     """
     time = timezone.now() + datetime.timedelta(days=days)
     return Question.objects.create(question_text=question_text, pub_date=time)
+
 
 class QuestionDetailViewTests(TestCase):
     def test_future_question(self):
@@ -91,6 +93,7 @@ class QuestionIndexViewTests(TestCase):
             response.context["latest_question_list"],
             ["<Question: Past question 2.>", "<Question: Past question 1.>"]
         )
+
 
 class QuestionModelTests(TestCase):
 
