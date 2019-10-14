@@ -24,8 +24,7 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Question
     template_name = "polls/detail.html"
-    
-    
+
     def get_queryset(self):
         """
         Excludes any questions that aren't published yet.
@@ -43,7 +42,6 @@ def vote(request, question_id):
     try:
         selected_choice = question.choice_set.get(pk=request.POST["choice"])
     except (KeyError, Choice.DoesNotExist):
-    # Redisplay the question voting form.
         return render(
             request,
             "polls/detail.html",
